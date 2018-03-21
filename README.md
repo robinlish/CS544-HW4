@@ -1,4 +1,5 @@
 # CS544-HW4
+
 Using R, do all of the following parts.
 Part1) Binomial distribution (20 points)
 Suppose a pitcher in Baseball has 50% chance of getting a strike-out.
