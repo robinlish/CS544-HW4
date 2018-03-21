@@ -1,5 +1,5 @@
 # CS544-HW4
-
+# reference:http://seankross.com/notes/dpqr/
 
 # Part1) Binomial distribution (20 points)
 # Suppose a pitcher in Baseball has 50% chance of getting a strike-out.Using the binomial distribution,
