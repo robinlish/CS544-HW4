@@ -1,10 +1,9 @@
 # CS544-HW4
 
-#Using R, do all of the following parts.
-##Part1) Binomial distribution (20 points)
-Suppose a pitcher in Baseball has 50% chance of getting a strike-out.
-Using the binomial distribution,
-###a) Compute and plot the probability distribution for striking out the next 6
+# Using R, do all of the following parts.
+## Part1) Binomial distribution (20 points)
+## Suppose a pitcher in Baseball has 50% chance of getting a strike-out.Using the binomial distribution,
+### a) Compute and plot the probability distribution for striking out the next 6
 batters.
 b) Plot the CDF for the above
 c) Repeat a) and b) if the pitcher has 70% chance of getting a strike-out.
