@@ -99,5 +99,62 @@ axis(side = 1, at = 0:10, labels = TRUE)
 #Part 4) Uniform distribution
 #Suppose that your exams are graded using a uniform distribution between 60 and 100 (both inclusive).
 ##a) What is the probability of scoring i) 60? ii) 80? iii) 100?
-grade <- seq(60,100)
-grade
+dunif(60,60,100)
+dunif(80,60,100)
+dunif(100,60,100)
+#the probabilities of scoring 60, 80 and 100 are all equal to 0.025
+
+##b) What is the mean and standard deviation of this distribution?
+grade <- seq(60,100,0.01)
+grade_prob <- dunif(grade,60,100)
+mean(grade_prob)
+sd(grade_prob)
+
+##c) What is the probability of getting a score of at most 70?
+punif(70,60,100)
+
+##d) What is the probability of getting a score greater than 80 (use the lower.tail option)?
+punif(80,60,100,lower.tail = F)
+
+##e) What is the probability of getting a score between 90 and 100 (both inclusive)?
+punif(100,60,100)-punif(90,60,100)
+
+#Part5) Normal distribution
+#Suppose that visitors at a theme park spend an average of $100 on souvenirs. Assume that the money spent is normally distributed with a standard deviation of $10.
+## a) Show the PDF of this distribution covering the three standard deviations on either side of the mean.
+a5 <- seq(60,140)
+pdf_a5 <- dnorm(a5, mean=100, sd=10)
+plot(a5, pdf_a5, type="l", col="red",xaxt="n")
+axis(side = 1, at = seq(60,140,10), 
+     labels = TRUE)
+
+
+## b) What is the probability that a randomly selected visitor will spend more than $120?
+pnorm(120,100,10,lower.tail=F)
+
+## c) What is the probability that a randomly selected visitor will spend between $80 and $90 (inclusive)?
+pnorm(90,100,10)-pnorm(80,100,10)
+
+## d) What are the probabilities of spending within one standard deviation, two standard deviations, and three standard deviations, respectively?
+###within one sd:
+pnorm(110,100,10)-pnorm(90,100,10)
+###within two sd:
+pnorm(120,100,10)-pnorm(80,100,10)
+###within three sd:
+pnorm(130,100,10)-pnorm(70,100,10)
+
+## e) Between what two values will the middle 90% of the money spent will fall?
+qnorm(0.95,100,10)
+qnorm(0.05,100,10)
+
+## f) Show a plot for 10,000 visitors using the above distribution.
+plot(table(round((rnorm(10000,100,10)))),type="h",xaxt="n")
+axis(side=1, at=seq(60,140,10),labels=T)
+
+# Part6) Exponential distribution (15 points)
+# Suppose your cell phone provider's customer support receives calls at the rate of 18 per hour.
+## a) What is the probability that the next call will arrive within 2 minutes?
+
+## b) What is the probability that the next call will arrive within 5 minutes?
+## c) What is the probability that the next call will arrive between 2 minutes and 5 minutes (both inclusive)?
+## d) Show the CDF of this distribution.
